@@ -120,7 +120,6 @@ export function AdminPanel({
                 type="date"
                 value={dateOfBirth}
                 onChange={(e) => setDateOfBirth(e.target.value)}
-                required
                 className="h-10"
               />
             </div>
