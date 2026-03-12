@@ -105,7 +105,7 @@ export function AdminPanel({
                 id="fullName"
                 value={fullName}
                 onChange={(e) => setFullName(e.target.value)}
-                placeholder="ex: Sophie Martin"
+                placeholder="Prénom + Nom"
                 required
                 className="h-10"
               />
@@ -120,7 +120,6 @@ export function AdminPanel({
                 type="date"
                 value={dateOfBirth}
                 onChange={(e) => setDateOfBirth(e.target.value)}
-                required
                 className="h-10"
               />
             </div>
