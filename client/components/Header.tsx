@@ -47,7 +47,7 @@ export function Header({ isAuthenticated = false, onLogout }: HeaderProps) {
                 <Button
                   variant="outline"
                   size="sm"
-                  onClick={() => navigate("/admin")}
+                  onClick={() => navigate(location.pathname === "/admin" ? "/" : "/admin")}
                   className="gap-2 hidden sm:flex"
                 >
                   <Settings className="w-4 h-4" />
