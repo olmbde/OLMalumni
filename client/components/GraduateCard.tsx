@@ -25,8 +25,9 @@ const trackColors: Record<Graduate["track"], string> = {
 };
 
 export function GraduateCard({ graduate }: GraduateCardProps) {
-  const birthDate = new Date(graduate.date_of_birth);
-  const formattedBirthDate = format(birthDate, "d MMMM yyyy", { locale: fr });
+  const formattedBirthDate = graduate.date_of_birth
+  ? format(new Date(graduate.date_of_birth), "d MMMM yyyy", { locale: fr })
+  : "Non renseignée";
 
   return (
     <div className="animate-fade-in">
