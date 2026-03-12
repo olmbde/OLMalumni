@@ -48,7 +48,7 @@ export function AdminPanel({
 
     const result = await onAddGraduate({
       full_name: fullName,
-      date_of_birth: dateOfBirth,
+      date_of_birth: dateOfBirth || null,
       promotion: parseInt(promotion),
       track,
       university,
