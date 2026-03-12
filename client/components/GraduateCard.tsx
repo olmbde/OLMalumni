@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge";
 export interface Graduate {
   id: string;
   full_name: string;
-  date_of_birth: string; // ISO date string
+  date_of_birth?: string; // ISO date string
   promotion: number;
   track: "Science Maths" | "Science Physique" | "Science SVT";
   university: string;
