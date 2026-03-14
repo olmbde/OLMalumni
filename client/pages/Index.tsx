@@ -26,21 +26,27 @@ export default function Index() {
   };
 
   const filteredGraduates = useMemo(() => {
+    // If no search or track filters applied, show all graduates
+    if (searchQuery === "" && selectedTracks.length === 0) {
+      return graduates;
+    }
+
     return graduates.filter((graduate) => {
       // Search filter
       const searchLower = searchQuery.toLowerCase();
       const matchesSearch =
+        searchQuery === "" ||
         graduate.full_name.toLowerCase().includes(searchLower) ||
         graduate.university.toLowerCase().includes(searchLower) ||
         graduate.promotion.toString().includes(searchLower);
 
-      // Track filter
+      // Track filter - if no tracks selected, show all; otherwise show only selected tracks
       const matchesTracks =
         selectedTracks.length === 0 || selectedTracks.includes(graduate.track);
 
       return matchesSearch && matchesTracks;
     });
-  }, [searchQuery, selectedTracks]);
+  }, [searchQuery, selectedTracks, graduates]);
 
   const toggleTrack = (track: Graduate["track"]) => {
     setSelectedTracks((prev) =>
