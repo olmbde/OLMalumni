@@ -36,8 +36,8 @@ export function Header({ isAuthenticated = false, onLogout }: HeaderProps) {
               className="h-12 w-auto"
             />
             <div className="flex flex-col">
-              <h1 className="text-xl font-bold text-foreground">OLM Alumni Network</h1>
-              <p className="text-xs text-muted-foreground">Base de données des bacheliers</p>
+              <h1 className="text-xl font-bold text-black" style={{ fontFamily: "Alatsi, sans-serif" }}>OLM Alumni Network</h1>
+              <p className="text-xs text-black" style={{ marginTop: "-5px" }}>Base de données des bacheliers</p>
             </div>
           </div>
 
