@@ -10,11 +10,13 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { ContactRequestsPanel } from "@/components/ContactRequestsPanel";
 import type { Graduate } from "@/components/GraduateCard";
 
 interface AdminPanelProps {
   graduates: Graduate[];
   loading: boolean;
+  refetchTrigger?: number;
   onAddGraduate: (graduate: Omit<Graduate, "id">) => Promise<{ success: boolean; error: string | null }>;
   onDeleteGraduate: (id: string) => Promise<{ success: boolean; error: string | null }>;
 }
@@ -28,6 +30,7 @@ const TRACKS: Graduate["track"][] = [
 export function AdminPanel({
   graduates,
   loading,
+  refetchTrigger = 0,
   onAddGraduate,
   onDeleteGraduate,
 }: AdminPanelProps) {
@@ -290,6 +293,9 @@ export function AdminPanel({
           </div>
         )}
       </div>
+
+      {/* Contact Requests Panel */}
+      <ContactRequestsPanel refetchTrigger={refetchTrigger} />
     </div>
   );
 }

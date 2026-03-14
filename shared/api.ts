@@ -10,3 +10,16 @@
 export interface DemoResponse {
   message: string;
 }
+
+/**
+ * Contact request submitted by users to contact graduates
+ */
+export interface ContactRequest {
+  id: string;
+  requested_graduate_id: string;
+  requested_graduate_name: string;
+  requester_name: string;
+  requester_contact: string;
+  message?: string;
+  created_at: string;
+}

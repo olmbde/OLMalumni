@@ -2,6 +2,11 @@ import "dotenv/config";
 import express from "express";
 import cors from "cors";
 import { handleDemo } from "./routes/demo";
+import {
+  submitContactRequest,
+  getContactRequests,
+  deleteContactRequest,
+} from "./routes/contact-requests";
 
 export function createServer() {
   const app = express();
@@ -18,6 +23,11 @@ export function createServer() {
   });
 
   app.get("/api/demo", handleDemo);
+
+  // Contact requests routes
+  app.post("/api/contact-requests", submitContactRequest);
+  app.get("/api/contact-requests", getContactRequests);
+  app.delete("/api/contact-requests/:id", deleteContactRequest);
 
   return app;
 }
